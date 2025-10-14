@@ -29,10 +29,10 @@
 	};
 
 	const DEFAULT_THEME: Theme = {
-		primary: '#0f172a',
-		secondary: '#1e293b',
+		primary: '#000000',
+		secondary: '#000000',
 		accent: '#3b82f6',
-		surface: 'rgba(15, 23, 42, 0.95)',
+		surface: 'rgba(0, 0, 0, 0.95)',
 		border: 'rgba(148, 163, 184, 0.18)',
 		highlight: 'rgba(96, 165, 250, 0.45)',
 		glow: 'rgba(59, 130, 246, 0.35)',
@@ -41,10 +41,10 @@
 	};
 
 	const DEFAULT_PALETTE: PaletteResult = {
-		dominant: { red: 15, green: 23, blue: 42 },
+		dominant: { red: 0, green: 0, blue: 0 },
 		accent: { red: 59, green: 130, blue: 246 },
 		palette: [
-			{ red: 30, green: 41, blue: 59 },
+			{ red: 0, green: 0, blue: 0 },
 			{ red: 59, green: 130, blue: 246 },
 			{ red: 99, green: 102, blue: 241 }
 		]
@@ -353,7 +353,7 @@
 	.dynamic-background__vignette {
 		position: absolute;
 		inset: 0;
-		background: radial-gradient(circle at center, transparent 40%, rgba(8, 11, 19, 0.82) 100%);
+		background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.82) 100%);
 	}
 
 	.dynamic-background__noise {

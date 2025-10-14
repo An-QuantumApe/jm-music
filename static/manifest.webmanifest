@@ -1,11 +1,11 @@
 {
-  "name": "BiniLossless",
-  "short_name": "BiniLossless",
+  "name": "Lossless Music",
+  "short_name": "Lossless Music",
   "description": "Lyrics-first Lossless client with karaoke-ready playback.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#111827",
-  "theme_color": "#0f172a",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "lang": "en-US",
   "scope": "/",
   "icons": [

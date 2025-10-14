@@ -29,7 +29,7 @@
 	import type { Track, AudioQuality } from '$lib/types';
 
 	let { children, data } = $props();
-	const pageTitle = $derived(data?.title ?? 'BiniTidal');
+	const pageTitle = $derived(data?.title ?? 'Lossless Music');
 	let headerHeight = $state(0);
 	let playerHeight = $state(0);
 	let viewportHeight = $state(0);
@@ -437,7 +437,7 @@
 	<link rel="icon" href={favicon} />
 	<link rel="manifest" href="/manifest.webmanifest" />
 	<link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
-	<meta name="theme-color" content="#0f172a" />
+	<meta name="theme-color" content="#000000" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 </svelte:head>
@@ -715,13 +715,13 @@
 
 <style>
 	:global(:root) {
-		--bloom-primary: #0f172a;
-		--bloom-secondary: #1f2937;
+		--bloom-primary: #000000;
+		--bloom-secondary: #000000;
 		--bloom-accent: #3b82f6;
 		--bloom-glow: rgba(59, 130, 246, 0.35);
 		--bloom-tertiary: rgba(99, 102, 241, 0.32);
 		--bloom-quaternary: rgba(30, 64, 175, 0.28);
-		--surface-color: rgba(15, 23, 42, 0.68);
+		--surface-color: rgba(0, 0, 0, 0.68);
 		--surface-border: rgba(148, 163, 184, 0.18);
 		--surface-highlight: rgba(148, 163, 184, 0.35);
 		--accent-color: var(--bloom-accent);
@@ -739,14 +739,14 @@
 			'Helvetica Neue',
 			Arial,
 			sans-serif;
-		background: radial-gradient(circle at top, rgba(15, 23, 42, 0.85), rgba(10, 12, 24, 0.95));
+		background: #000000;
 		color: #f8fafc;
 	}
 
 	.app-root {
 		position: relative;
 		min-height: 100vh;
-		background-color: rgba(4, 7, 15, 0.9);
+		background-color: #000000;
 		color: inherit;
 	}
 
