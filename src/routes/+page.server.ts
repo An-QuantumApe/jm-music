@@ -4,6 +4,6 @@ import { env } from '$env/dynamic/private';
 export const load: LayoutServerLoad = () => {
 	return {
 		title: env.TITLE ?? 'Lossless Music',
-		slogan: env.SLOGAN ?? 'The easiest way to stream CD-quality lossless FLACs.'
+		slogan: env.SLOGAN ?? 'Stream Lossless Music'
 	};
 };
