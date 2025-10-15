@@ -16,7 +16,6 @@
 		User,
 		Disc,
 		Download,
-		Newspaper,
 		ListPlus,
 		ListVideo,
 		LoaderCircle,
@@ -77,31 +76,6 @@
 
 	let albumDownloadStates = $state<Record<number, AlbumDownloadState>>({});
 
-	const newsItems = [
-		{
-			title: 'Redesign + QQDL',
-			description: 'Hi-Res downloading still a WIP but a cool redesign that I inspired off a very cool library called Color Thief is here - and the site is also now up at QQDL!'
-		},	
-		{
-			title: 'Hi-Res Audio',
-			description: 'Streaming for Hi-Res is now here. Stay tuned for Hi-Res downloading - I haven\'t gotten that one figured out yet. And video covers/lower quality streaming. Pretty cool.'
-		},
-		{
-			title: 'Even more changes!',
-			description:
-				"LYRICS!!! I've stabilised the API a bit and added a few more features such as ZIP download of albums, better error handling, etc. Stay tuned for word by word lyrics!"
-		},
-		{
-			title: 'QOL changes',
-			description:
-				'This website is still very much in beta, but queue management and album/artist pages/downloads have been added as well as some bug squashing/QOL changes such as bigger album covers and download all for albums.'
-		},
-		{
-			title: 'Initial release!',
-			description:
-				"Two APIs fetch lossless CD-quality 16/44.1kHz FLACs. No support for Hi-Res yet but I'm working on it haha. No playlist saving or logging in either but downloading and streaming work."
-		}
-	];
 
 	const trackSkeletons = Array.from({ length: 6 }, (_, index) => index);
 	const gridSkeletons = Array.from({ length: 8 }, (_, index) => index);
@@ -799,28 +773,6 @@
 					</a>
 				{/each}
 			</div>
-			<!-- News Section -->
-		{:else if !query.trim()}
-			<div class="news-container rounded-lg border p-4">
-				<h2 class="mb-4 text-3xl font-bold">News</h2>
-				<section class="grid gap-4 text-left shadow-lg sm:grid-cols-2">
-					{#each newsItems as item}
-						<article
-							class="news-card flex flex-col gap-3 rounded-lg border p-4 transition-transform hover:-translate-y-0.5"
-						>
-							<div class="flex items-center gap-3">
-								<div
-									class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-900/40 text-blue-300"
-								>
-									<Newspaper size={20} />
-								</div>
-								<h3 class="text-lg font-semibold text-white">{item.title}</h3>
-							</div>
-							<p class="text-sm text-gray-300">{item.description}</p>
-						</article>
-					{/each}
-				</section>
-			</div>
 		{:else if query.trim() && !isLoading}
 			<div class="py-12 text-center text-gray-400">
 				<p>No results found...</p>
@@ -927,42 +879,6 @@
 		box-shadow: 
 			0 6px 18px rgba(59, 130, 246, 0.45),
 			inset 0 1px 0 rgba(255, 255, 255, 0.15);
-	}
-
-	/* News container acrylic styling */
-	.news-container {
-		background: transparent;
-		border-color: rgba(148, 163, 184, 0.2);
-		backdrop-filter: blur(var(--perf-blur-medium, 28px)) saturate(var(--perf-saturate, 160%));
-		-webkit-backdrop-filter: blur(var(--perf-blur-medium, 28px)) saturate(var(--perf-saturate, 160%));
-		box-shadow: 
-			0 8px 24px rgba(2, 6, 23, 0.35),
-			inset 0 1px 0 rgba(255, 255, 255, 0.05);
-		transition: 
-			border-color 1.2s cubic-bezier(0.4, 0, 0.2, 1),
-			box-shadow 0.3s ease;
-	}
-
-	/* News card acrylic styling */
-	.news-card {
-		background: transparent;
-		border-color: rgba(148, 163, 184, 0.18);
-		backdrop-filter: blur(var(--perf-blur-low, 24px)) saturate(var(--perf-saturate, 160%));
-		-webkit-backdrop-filter: blur(var(--perf-blur-low, 24px)) saturate(var(--perf-saturate, 160%));
-		box-shadow: 
-			0 4px 12px rgba(2, 6, 23, 0.3),
-			inset 0 1px 0 rgba(255, 255, 255, 0.04);
-		transition: 
-			border-color 1.2s cubic-bezier(0.4, 0, 0.2, 1),
-			box-shadow 0.3s ease,
-			transform 0.2s ease;
-	}
-
-	.news-card:hover {
-		border-color: rgba(148, 163, 184, 0.3);
-		box-shadow: 
-			0 6px 18px rgba(2, 6, 23, 0.4),
-			inset 0 1px 0 rgba(255, 255, 255, 0.06);
 	}
 
 	/* Improved contrast for grey text */
